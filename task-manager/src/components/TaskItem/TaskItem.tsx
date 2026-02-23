@@ -1,4 +1,4 @@
-import type { Task, TaskStatus } from "../../types";
+import type { TaskStatus } from "../../types";
 import type { TaskItemProps } from "../../types";
 
 export const TaskItem = ({ task, onStatusChange, onDelete }: TaskItemProps) => {
@@ -9,13 +9,13 @@ export const TaskItem = ({ task, onStatusChange, onDelete }: TaskItemProps) => {
       <p>Priority: {task.priority}</p>
       <p>Due: {task.dueDate}</p>
 
-      <select id={task.id} value={task.status} onChange={() => onStatusChange}>
+      <select id={task.id} value={task.status} onChange={(e) => onStatusChange(task.id, e.target.value as TaskStatus)}>
         <option value="pending">Pending</option>
         <option value="in-progress">In Progress</option>
         <option value="completed">completed</option>
       </select>
 
-      <button onClick={() => onDelete}>Delete</button>
+      <button onClick={() => onDelete(task.id)}>Delete</button>
     </>
   );
 };
