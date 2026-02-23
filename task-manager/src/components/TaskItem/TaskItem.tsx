@@ -7,6 +7,13 @@ export const TaskItem = ({ task, onStatusChange, onDelete }: TaskItemProps) => {
         <p>{task.description}</p>
         <p>Priority: {task.priority}</p>
         <p>Due: {task.dueDate}</p>
+        
+        <select name="status" id="task.id" value='task.status' onChange=onStatusChange>
+        <option value="pending">Pending</option>
+        <option value="in-progress">In Progess</option>
+                <option value="completed">completed</option>
+
+        </select>
     )
 }
 
