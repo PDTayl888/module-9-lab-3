@@ -1,14 +1,23 @@
-import type { Task, TaskStatus } from '../../types';
-import type { TaskItem } from '../TaskItem/TaskItem';
+//import type { Task, TaskStatus } from "../../types";
+import { TaskItem } from "../TaskItem/TaskItem";
 
-import type { TaskListProps } from '../../types';
-import { TaskListProps } from './../../types/index';
+import type { TaskListProps } from "../../types";
 
-export const TaskList = ({ tasks, onStatusChange, onDelete }: TaskListProps) => {
-    return (
-        <>
-        <TaskItem></TaskItem>
-
-        </>
-    )
-}
+export const TaskList = ({
+  tasks,
+  onStatusChange,
+  onDelete,
+}: TaskListProps) => {
+  return (
+    <>
+      {tasks.map((task) => (
+        <TaskItem
+          key={task.id}
+          task={task}
+          onStatusChange={() => onStatusChange}
+          onDelete={() => onDelete}
+        ></TaskItem>
+      ))}
+    </>
+  );
+};
