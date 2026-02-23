@@ -8,7 +8,7 @@ export interface Task {
   priority: 'low' | 'medium' | 'high';
   dueDate: string;
 }
- 
+
 export interface TaskListProps {
   tasks: Task[];
   onStatusChange: (taskId: string, newStatus: TaskStatus) => void;
