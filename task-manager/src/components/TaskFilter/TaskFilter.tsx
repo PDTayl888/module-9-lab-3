@@ -3,16 +3,15 @@ import type { TaskFilterProps } from "../../types";
 export const TaskFilter = ({ onFilterChange }: TaskFilterProps) => {
   return (
     <>
-      <label>Status:</label>
-      <select name="status-filter" onChange={(e) => onFilterChange({status: e.target.value as any})}>
+      <label>Status </label>
+      <select name="status-filter" onChange={(e) => onFilterChange({status: e.target.value })}>
         <option value="all">All Statuses</option>
         <option value="pending">Pending</option>
         <option value="in-progress">In Progress</option>
         <option value="completed">Completed</option>
       </select>
 
-      <label>PRiority</label>
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-explicit-any
+      <label> Priority </label>
       <select name="priority-filter" onChange={(e) => onFilterChange({priority: e.target.value as any})}>
         <option value="all">All Priorities</option>
         <option value="high">High</option>
