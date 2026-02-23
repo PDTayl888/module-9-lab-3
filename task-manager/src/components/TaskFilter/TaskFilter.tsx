@@ -1,13 +1,23 @@
+import type { TaskFilterProps } from "../../types";
 
+export const TaskFilter = ({ onFilterChange }: TaskFilterProps) => {
+  return (
+    <>
+      <label>Status:</label>
+      <select name="status-filter" onChange={() => onFilterChange}>
+        <option value="all">All Statuses</option>
+        <option value="pending">Pending</option>
+        <option value="in-progress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
 
-export const TaskFilter = ({onFilterChange}: TaskFilterProps) => {
-    return(
-        <>
-        <label>Status:</label>
-        <select name="" id=""></select>
-
-        <label>PRiority</label>
-        <select name="" id=""></select>
-        </>
-    )
-}
+      <label>PRiority</label>
+      <select name="priority-filter" onChange={() => onFilterChange}>
+        <option value="all">All Priorities</option>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+    </>
+  );
+};

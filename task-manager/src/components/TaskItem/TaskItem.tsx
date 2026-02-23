@@ -9,7 +9,7 @@ export const TaskItem = ({ task, onStatusChange, onDelete }: TaskItemProps) => {
       <p>Priority: {task.priority}</p>
       <p>Due: {task.dueDate}</p>
 
-      <select id={task.id} value={task.status} onChange={(e) => onStatusChange(task.id, e.target.value as TaskStatus)}>
+      <select name="status" id={task.id} value={task.status} onChange={(e) => onStatusChange(task.id, e.target.value as TaskStatus)}>
         <option value="pending">Pending</option>
         <option value="in-progress">In Progress</option>
         <option value="completed">completed</option>
