@@ -8,7 +8,7 @@ export const TaskFilter = ({ onFilterChange }: TaskFilterProps) => {
         borderRadius: "12px",
         padding: "6px",
         backgroundColor: "darkBlue",
-        color: "white"
+        color: "white",
       }}
     >
       <label>Status </label>
