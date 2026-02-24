@@ -55,8 +55,17 @@ function App() {
       ></TaskFilter>
       <TaskList
         tasks={filteredTasks}
-        onStatusChange={() => alert("onStatusChange called")}
-        onDelete={(id) => {console.log("delete taskliist button"); setTasks(tasks.filter(t => t.id !== id))}}
+        onStatusChange={(taskId, newStatus) =>
+          setTasks(
+            tasks.map((task) =>
+              task.id === taskId ? { ...task, status: newStatus } : task,
+            ),
+          )
+        }
+        onDelete={(id) => {
+          console.log("delete taskliist button");
+          setTasks(tasks.filter((t) => t.id !== id));
+        }}
       ></TaskList>
     </>
   );
