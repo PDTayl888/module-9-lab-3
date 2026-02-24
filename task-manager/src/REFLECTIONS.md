@@ -11,4 +11,5 @@ How did you handle state updates for task status changes?
 
 
 What challenges did you face when implementing conditional rendering?
-    
+    I used a simple if block that checked if there were any tasks in state. If not it returned an appropriate message. 
+    Otherwise the standard taskList return block was rendered.
