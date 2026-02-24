@@ -3,7 +3,13 @@ import type { TaskItemProps } from "../../types";
 
 export const TaskItem = ({ task, onStatusChange, onDelete }: TaskItemProps) => {
   return (
-    <>
+    <div
+      style={{
+        border: "1px solid #fffffff",
+        borderRadius: "12px",
+        backgroundColor: "blue",
+      }}
+    >
       <h3>{task.title}</h3>
       <p>{task.description}</p>
       <p>Priority: {task.priority}</p>
@@ -20,7 +26,19 @@ export const TaskItem = ({ task, onStatusChange, onDelete }: TaskItemProps) => {
         <option value="completed">completed</option>
       </select>
 
-      <button onClick={() => {console.log("delete button"); onDelete(task.id)}}>Delete</button>
-    </>
+      <button
+        style={{
+          borderRadius: "8px",
+          marginLeft: "130px",
+          backgroundColor: "red",
+        }}
+        onClick={() => {
+          console.log("X");
+          onDelete(task.id);
+        }}
+      >
+        X
+      </button>
+    </div>
   );
 };

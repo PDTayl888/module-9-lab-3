@@ -1,13 +1,21 @@
 import type { TaskFilterProps } from "../../types";
 
-export const TaskFilter = ({onFilterChange}: TaskFilterProps) => {
-
-    
-
+export const TaskFilter = ({ onFilterChange }: TaskFilterProps) => {
   return (
-    <>
+    <div
+      style={{
+        border: "1px solid #fffffff",
+        borderRadius: "12px",
+        padding: "6px",
+        backgroundColor: "darkBlue",
+        color: "white"
+      }}
+    >
       <label>Status </label>
-      <select name="status-filter" onChange={(e) => onFilterChange({status: e.target.value as any})}>
+      <select
+        name="status-filter"
+        onChange={(e) => onFilterChange({ status: e.target.value as any })}
+      >
         <option value="all">All Statuses</option>
         <option value="pending">Pending</option>
         <option value="in-progress">In Progress</option>
@@ -15,12 +23,15 @@ export const TaskFilter = ({onFilterChange}: TaskFilterProps) => {
       </select>
 
       <label> Priority </label>
-      <select name="priority-filter" onChange={(e) => onFilterChange({priority: e.target.value as any})}>
+      <select
+        name="priority-filter"
+        onChange={(e) => onFilterChange({ priority: e.target.value as any })}
+      >
         <option value="all">All Priorities</option>
         <option value="high">High</option>
         <option value="medium">Medium</option>
         <option value="low">Low</option>
       </select>
-    </>
+    </div>
   );
 };
