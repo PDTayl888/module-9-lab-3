@@ -2,9 +2,10 @@ import { useState } from "react";
 import "./App.css";
 import { TaskFilter } from "./components/TaskFilter/TaskFilter";
 import { TaskList } from "./components/TaskList/TaskList";
+import type { Task } from "./types";
 
 function App() {
-  const [tasks, setTasks] = useState([
+  const [tasks, setTasks] = useState<Task[]>([
     {
       id: "67",
       title: "Do that thing",
@@ -47,15 +48,15 @@ function App() {
       (task) => filter.priority === "all" || task.priority === filter.priority,
     );
 
-  const [filter, setFilter] = useState({ status: "all", priority: "all" });
-
   return (
     <>
-      <TaskFilter onFilterChange={(newStatus) => setFilter({ ...filter, ...newStatus})}></TaskFilter>
+      <TaskFilter
+        onFilterChange={(newStatus) => setFilter({ ...filter, ...newStatus })}
+      ></TaskFilter>
       <TaskList
         tasks={filteredTasks}
         onStatusChange={() => alert("onStatusChange called")}
-        onDelete={() => console.log("onDelete called")}
+        onDelete={(id) => {console.log("delete taskliist button"); setTasks(tasks.filter(t => t.id !== id))}}
       ></TaskList>
     </>
   );

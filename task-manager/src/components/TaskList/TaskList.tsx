@@ -15,7 +15,7 @@ export const TaskList = ({
           key={task.id}
           task={task}
           onStatusChange={() => onStatusChange}
-          onDelete={() => onDelete}
+          onDelete={onDelete}
         ></TaskItem>
       ))}
     </>

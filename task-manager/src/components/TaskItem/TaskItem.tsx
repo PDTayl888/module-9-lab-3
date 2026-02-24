@@ -20,7 +20,7 @@ export const TaskItem = ({ task, onStatusChange, onDelete }: TaskItemProps) => {
         <option value="completed">completed</option>
       </select>
 
-      <button onClick={() => onDelete(task.id)}>Delete</button>
+      <button onClick={() => {console.log("delete button"); onDelete(task.id)}}>Delete</button>
     </>
   );
 };
