@@ -8,6 +8,19 @@ export const TaskList = ({
   onStatusChange,
   onDelete,
 }: TaskListProps) => {
+  if (tasks.length === 0) {
+    return (
+      <h2
+        style={{
+          borderRadius: "12px",
+          backgroundColor: "red",
+        }}
+      >
+        NO TASKS FOUND
+      </h2>
+    );
+  }
+
   return (
     <>
       {tasks.map((task) => (
